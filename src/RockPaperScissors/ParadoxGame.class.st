@@ -6,7 +6,8 @@ Class {
 	#superclass : 'Object',
 	#instVars : [
 		'nItems',
-		'beatsDifferences'
+		'beatsDifferences',
+		'names'
 	],
 	#category : 'RockPaperScissors-Custom',
 	#package : 'RockPaperScissors',
@@ -18,9 +19,14 @@ ParadoxGame class >> newNItems: aNaturalNumber beatsDifferences: anArray [
 	^self new nItems: aNaturalNumber; beatsDifferences: anArray; yourself
 ]
 
+{ #category : 'instance creation' }
+ParadoxGame class >> newNItems: aNaturalNumber beatsDifferences: anArray names: nameArray [
+	^self new nItems: aNaturalNumber; beatsDifferences: anArray; names: nameArray; yourself
+]
+
 { #category : 'preset games' }
 ParadoxGame class >> rockPaperScissors [
-	^self newNItems: 3 beatsDifferences: #(1) asSet
+	^self newNItems: 3 beatsDifferences: #(1) asSet names: #(#rock #paper #scissors)
 ]
 
 { #category : 'preset games' }
@@ -47,6 +53,15 @@ ParadoxGame >> itemAt: aNaturalNumber [
 ]
 
 { #category : 'accessing' }
+ParadoxGame >> itemNamed: aName [
+	| id |
+	id := self names
+		ifNil: [ aName asInteger ]
+		ifNotNil: [ (self names indexOf: aName) - 1 ].
+	^self itemAt: id.
+]
+
+{ #category : 'accessing' }
 ParadoxGame >> nItems [
 	^nItems
 ]
@@ -54,4 +69,21 @@ ParadoxGame >> nItems [
 { #category : 'accessing' }
 ParadoxGame >> nItems: aNaturalNumber [
 	nItems := aNaturalNumber
+]
+
+{ #category : 'accessing' }
+ParadoxGame >> nameAt: aNaturalNumber [
+	self names
+		ifNil: [ ^aNaturalNumber asString ]
+		ifNotNil: [ ^self names at: aNaturalNumber + 1 ].
+]
+
+{ #category : 'accessing' }
+ParadoxGame >> names [
+	^names
+]
+
+{ #category : 'accessing' }
+ParadoxGame >> names: anArray [
+	names := anArray
 ]

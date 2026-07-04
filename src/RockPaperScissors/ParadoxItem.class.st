@@ -42,3 +42,8 @@ ParadoxItem >> id: aNaturalNumber [
 	(aNaturalNumber < 0 or: [ aNaturalNumber >= self game nItems ]) ifTrue: [ self error: 'invalid ID' ].
 	id := aNaturalNumber.
 ]
+
+{ #category : 'accessing' }
+ParadoxItem >> name [
+	^self game name: self id
+]

@@ -20,9 +20,9 @@ ParadoxTest >> testBasicTwoParadox [
 ParadoxTest >> testRockPaperScissors [
 	| game rock paper scissors |
 	game := ParadoxGame rockPaperScissors.
-	rock := game itemAt: 0.
-	paper := game itemAt: 1.
-	scissors := game itemAt: 2.
+	rock := game itemNamed: #rock.
+	paper := game itemNamed: #paper.
+	scissors := game itemNamed: #scissors.
 	
 	self assert: (rock beats: paper).
 	self assert: (paper beats: scissors).
