@@ -15,23 +15,45 @@ Class {
 }
 
 { #category : 'instance creation' }
+ParadoxGame class >> names: nameArray beatsDifferences: diffArray [
+	^self new nItems: nameArray size; beatsDifferences: diffArray; names: nameArray; yourself
+]
+
+{ #category : 'instance creation' }
 ParadoxGame class >> newNItems: aNaturalNumber beatsDifferences: anArray [
 	^self new nItems: aNaturalNumber; beatsDifferences: anArray; yourself
 ]
 
-{ #category : 'instance creation' }
-ParadoxGame class >> newNItems: aNaturalNumber beatsDifferences: anArray names: nameArray [
-	^self new nItems: aNaturalNumber; beatsDifferences: anArray; names: nameArray; yourself
-]
-
 { #category : 'preset games' }
 ParadoxGame class >> rockPaperScissors [
-	^self newNItems: 3 beatsDifferences: #(2) asSet names: #(#rock #paper #scissors)
+	^self  names: #(#rock #paper #scissors) beatsDifferences: #(2) asSet
 ]
 
 { #category : 'preset games' }
 ParadoxGame class >> rockPaperScissorsLizardSpock [
-	^self newNItems: 5 beatsDifferences: #(2 4) asSet names: #(#rock #paper #scissors #spock #lizard)
+	^self names: #(#rock #paper #scissors #spock #lizard) beatsDifferences: #(2 4) asSet
+]
+
+{ #category : 'instance creation' }
+ParadoxGame class >> simpleGame: numItems [
+	"Creates a simple game from numItems items.  numItems must be an odd positive integer."
+	"Items are always named by numbers from 0 to numItems - 1".
+	^self newNItems: numItems beatsDifferences: (1 to: numItems // 2).
+]
+
+{ #category : 'instance creation' }
+ParadoxGame class >> simpleGameFromNames: anArray [
+	"Creates a simple game from the provided names.  There must be an odd number of names."
+	"For a game with N items, each beats the next floor(N/2) items, and loses to the rest."
+	^self  names: anArray beatsDifferences: (1 to: anArray size // 2).
+]
+
+{ #category : 'preset games' }
+ParadoxGame class >> threeParadox [
+	"A RPS-like game with 19 items.  Each trio of elements has a corresponding one that beats all three."
+	"More information: https://www.youtube.com/watch?v=r2whuz6tkb0; https://en.wikipedia.org/wiki/Tournament_(graph_theory)#Paradoxical_tournaments; https://oeis.org/A362137"
+	"The item names are just numbers from 0 to 18."
+	^self newNItems: 19 beatsDifferences: #(1 4 5 6 7 9 11 16 17) asSet
 ]
 
 { #category : 'preset games' }
