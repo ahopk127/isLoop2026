@@ -1,6 +1,7 @@
 Class {
 	#name : 'RockPaperScissors',
 	#superclass : 'Object',
-	#category : 'RockPaperScissors',
-	#package : 'RockPaperScissors'
+	#category : 'RockPaperScissors-RockPaperScissors',
+	#package : 'RockPaperScissors',
+	#tag : 'RockPaperScissors'
 }
