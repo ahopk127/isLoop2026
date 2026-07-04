@@ -75,6 +75,14 @@ ParadoxGame >> beatsDifferences: anArray [
 ]
 
 { #category : 'accessing' }
+ParadoxGame >> idOfName: aName [
+	"Returns the ID corresponding to the provided name."
+	^self names
+		ifNil: [ aName asInteger ]
+		ifNotNil: [ (self names indexOf: aName) - 1 ].
+]
+
+{ #category : 'accessing' }
 ParadoxGame >> itemAt: aNaturalNumber [
 	"Gets my item at index aNaturalNumber."
 	^ParadoxItem new game: self; id: aNaturalNumber; yourself
@@ -91,11 +99,7 @@ ParadoxGame >> itemAt: firstID beats: secondID [
 
 { #category : 'accessing' }
 ParadoxGame >> itemNamed: aName [
-	| id |
-	id := self names
-		ifNil: [ aName asInteger ]
-		ifNotNil: [ (self names indexOf: aName) - 1 ].
-	^self itemAt: id.
+	^self itemAt: (self idOfName: aName)
 ]
 
 { #category : 'accessing' }
