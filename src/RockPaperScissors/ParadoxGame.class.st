@@ -80,6 +80,15 @@ ParadoxGame >> itemAt: aNaturalNumber [
 	^ParadoxItem new game: self; id: aNaturalNumber; yourself
 ]
 
+{ #category : 'testing' }
+ParadoxGame >> itemAt: firstID beats: secondID [
+	"Determines whether the item at the first ID beats the second ID."
+	| difference |
+	difference := secondID - firstID \\ self nItems.
+	difference = 0 ifTrue: [ ^nil ].
+	^self beatsDifferences includes: difference.	
+]
+
 { #category : 'accessing' }
 ParadoxGame >> itemNamed: aName [
 	| id |

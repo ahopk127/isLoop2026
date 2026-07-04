@@ -21,10 +21,7 @@ ParadoxItem >> = anItem [
 { #category : 'testing' }
 ParadoxItem >> beats: anItem [
 	"Returns true if I beat anItem, false if not, or nil if I am the same as anItem."
-	| difference |
-	difference := anItem id - self id \\ self game nItems.
-	difference = 0 ifTrue: [ ^nil ].
-	^self game beatsDifferences includes: difference.
+	^self game itemAt: self id beats: anItem id
 ]
 
 { #category : 'accessing' }
