@@ -18,7 +18,7 @@ Scissors >> playAgainstPaper: aPaper [
 
 { #category : 'as yet unclassified' }
 Scissors >> playAgainstRock: aRock [
-	^self
+	^aRock
 ]
 
 { #category : 'as yet unclassified' }

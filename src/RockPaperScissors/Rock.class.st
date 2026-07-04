@@ -8,7 +8,7 @@ Class {
 
 { #category : 'as yet unclassified' }
 Rock >> playAgainst: anItem [ 
-	^anItem playAgainstPaper: self.
+	^anItem playAgainstRock: self.
 ]
 
 { #category : 'as yet unclassified' }

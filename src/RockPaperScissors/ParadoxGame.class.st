@@ -26,7 +26,7 @@ ParadoxGame class >> newNItems: aNaturalNumber beatsDifferences: anArray names: 
 
 { #category : 'preset games' }
 ParadoxGame class >> rockPaperScissors [
-	^self newNItems: 3 beatsDifferences: #(1) asSet names: #(#rock #paper #scissors)
+	^self newNItems: 3 beatsDifferences: #(2) asSet names: #(#rock #paper #scissors)
 ]
 
 { #category : 'preset games' }

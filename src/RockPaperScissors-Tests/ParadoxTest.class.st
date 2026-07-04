@@ -24,12 +24,12 @@ ParadoxTest >> testRockPaperScissors [
 	paper := game itemNamed: #paper.
 	scissors := game itemNamed: #scissors.
 	
-	self assert: (rock beats: paper).
-	self assert: (paper beats: scissors).
-	self assert: (scissors beats: rock).
-	self assert: (paper beats: rock) not.
-	self assert: (rock beats: scissors) not.
-	self assert: (scissors beats: paper) not.
+	self assert: (paper beats: rock).
+	self assert: (rock beats: scissors).
+	self assert: (scissors beats: paper).
+	self assert: (rock beats: paper) not.
+	self assert: (paper beats: scissors) not.
+	self assert: (scissors beats: rock) not.
 	self assert: (rock beats: rock) isNil.
 	self assert: (paper beats: paper) isNil.
 	self assert: (scissors beats: scissors) isNil.
