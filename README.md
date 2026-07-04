@@ -8,6 +8,14 @@ This is the first project we did, and is pretty basic.
 
 Later, I added another version that can do custom games, such as [Rock-Paper-Scissors-Lizard-Spock](https://en.wikipedia.org/wiki/Rock_Paper_Scissors#Additional_weapons) or [the 2-paradox game](https://www.youtube.com/watch?v=r2whuz6tkb0).
 
+Get it with Metacello:
+```smalltalk
+Metacello new
+	repository: 'github://ahopk127/isLoop2026:main';
+	baseline: 'RockPaperScissors';
+	load
+```
+
 An example of using the custom system:
 ```smalltalk
 | game rock paper |
