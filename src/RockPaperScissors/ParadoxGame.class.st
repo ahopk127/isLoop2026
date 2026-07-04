@@ -37,7 +37,8 @@ ParadoxGame class >> rockPaperScissorsLizardSpock [
 { #category : 'preset games' }
 ParadoxGame class >> twoParadox [
 	"A RPS-like game with 7 items.  Each pair of elements has a corresponding one that beats both."
-	"More information: https://www.youtube.com/watch?v=r2whuz6tkb0"
+	"More information: https://www.youtube.com/watch?v=r2whuz6tkb0; https://en.wikipedia.org/wiki/Tournament_(graph_theory)#Paradoxical_tournaments"
+	"The item names are just numbers from 0 to 6."
 	^self newNItems: 7 beatsDifferences: #(1 2 4) asSet
 ]
 

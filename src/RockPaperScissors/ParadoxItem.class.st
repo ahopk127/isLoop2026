@@ -13,6 +13,11 @@ Class {
 	#tag : 'Custom'
 }
 
+{ #category : 'comparing' }
+ParadoxItem >> = anItem [
+	^self game = anItem game and: [ self id = anItem id ]
+]
+
 { #category : 'testing' }
 ParadoxItem >> beats: anItem [
 	"Returns true if I beat anItem, false if not, or nil if I am the same as anItem."
@@ -30,6 +35,11 @@ ParadoxItem >> game [
 { #category : 'accessing' }
 ParadoxItem >> game: aGame [
 	game := aGame
+]
+
+{ #category : 'comparing' }
+ParadoxItem >> hash [
+	^self game hash bitXor: self id hash
 ]
 
 { #category : 'accessing' }

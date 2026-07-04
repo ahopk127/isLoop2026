@@ -75,3 +75,15 @@ ParadoxTest >> testRockPaperScissorsLizardSpock [
 	self assert: (spock beats: spock) isNil.
 
 ]
+
+{ #category : 'tests' }
+ParadoxTest >> testRockPaperScissorsNames [
+	| game rock1 rock2 paper1 paper2 scissors1 scissors2 |
+	game := ParadoxGame rockPaperScissors.
+	rock1 := game itemAt: 0. rock2 := game itemNamed: #rock.
+	paper1 := game itemAt: 1. paper2 := game itemNamed: #paper.
+	scissors1 := game itemAt: 2. scissors2 := game itemNamed: #scissors.
+	self assert: rock2 equals: rock1.
+	self assert: paper2 equals: paper1.
+	self assert: scissors2 equals: scissors1.
+]
