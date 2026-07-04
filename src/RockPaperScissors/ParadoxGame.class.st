@@ -30,6 +30,11 @@ ParadoxGame class >> rockPaperScissors [
 ]
 
 { #category : 'preset games' }
+ParadoxGame class >> rockPaperScissorsLizardSpock [
+	^self newNItems: 5 beatsDifferences: #(2 4) asSet names: #(#rock #paper #scissors #spock #lizard)
+]
+
+{ #category : 'preset games' }
 ParadoxGame class >> twoParadox [
 	"A RPS-like game with 7 items.  Each pair of elements has a corresponding one that beats both."
 	"More information: https://www.youtube.com/watch?v=r2whuz6tkb0"
