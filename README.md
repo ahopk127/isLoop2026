@@ -2,11 +2,16 @@
 
 This repository contains all my projects for the [isLoop Summer School in 2026](https://isloop.pharo.org/2026-plovdiv/).
 
-## Rock Paper Scissors
+## Rock Paper Scissors -- 2026-07-04 Sat
 
 This is the first project we did, and is pretty basic.
 
-Later, I added another version that can do custom games, such as [Rock-Paper-Scissors-Lizard-Spock](https://en.wikipedia.org/wiki/Rock_Paper_Scissors#Additional_weapons) or [the 2-paradox game](https://www.youtube.com/watch?v=r2whuz6tkb0).
+We started with a simple implementation based on double dispatch.  Later, I added another version that can do custom games, such as [Rock-Paper-Scissors-Lizard-Spock](https://en.wikipedia.org/wiki/Rock_Paper_Scissors#Additional_weapons) or [the 2-paradox game](https://www.youtube.com/watch?v=r2whuz6tkb0).
+
+This project's code is stored in the packages:
+* `BaselineOfRockPaperScissors`
+* `RockPaperScissors`
+* `RockPaperScissors-Tests`
 
 Get it with Metacello:
 ```smalltalk
@@ -25,3 +30,7 @@ paper := game itemNamed: #paper.
 
 rock beats: paper "false"
 ```
+
+Information about the project:
+* [Exercise description](https://github.com/olekscode/isloop2026/blob/main/Exercises/RockPaperScissor.md)
+* [Implementation by the event facilitator](https://github.com/olekscode/RockPaperScissors)
