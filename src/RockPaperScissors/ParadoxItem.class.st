@@ -54,3 +54,12 @@ ParadoxItem >> id: aNaturalNumber [
 ParadoxItem >> name [
 	^self game name: self id
 ]
+
+{ #category : 'running' }
+ParadoxItem >> playAgainst: anItem [
+	"Returns the winner of myself and anItem, returning myself in case of a tie."
+	| result |
+	result := self beats: anItem.
+	result ifNil: [ ^self ].
+	^result ifTrue: [ self ] ifFalse: [ anItem ].
+]

@@ -1,5 +1,8 @@
 "
 A rock-paper-scissors-like game.
+
+I am named after ""paradoxical tournaments"", the mathematical term for such a game:
+https://en.wikipedia.org/wiki/Tournament_(graph_theory)#Paradoxical_tournaments
 "
 Class {
 	#name : 'ParadoxGame',
@@ -127,4 +130,15 @@ ParadoxGame >> names [
 { #category : 'accessing' }
 ParadoxGame >> names: anArray [
 	names := anArray
+]
+
+{ #category : 'running' }
+ParadoxGame >> play: firstName against: secondName [
+	"Returns the winner of the provided names.  In case of ties, return the first."
+	| item1 item2 result |
+	item1 := self itemNamed: firstName.
+	item2 := self itemNamed: secondName.
+	result := item1 beats: item2.
+	result ifNil: [ ^firstName ].
+	^result ifTrue: [ firstName ] ifFalse: [ secondName ].
 ]
