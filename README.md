@@ -34,3 +34,13 @@ rock beats: paper "false"
 Information about the project:
 * [Exercise description](https://github.com/olekscode/isloop2026/blob/main/Exercises/RockPaperScissor.md)
 * [Implementation by the event facilitator](https://github.com/olekscode/RockPaperScissors)
+
+## Pharo Pull Request -- 2026-07-05 Sun
+
+On Sunday, I made some contributions to Pharo itself:
+* [Add examples to String>>#asPluralBasedOn:](https://github.com/pharo-project/pharo/pull/19851)
+
+I also helped with a another issue:
+* [String >> asHTMLString deserves some executable comments.](https://github.com/pharo-project/pharo/issues/18327)
+
+That was all the programming we did for Day 2.
